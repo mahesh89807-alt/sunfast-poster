@@ -1,107 +1,274 @@
-/* =========================
+/* =====================================
    SUNFAST WEB SOLUTIONS
-   PREMIUM CSS - PART 2A
-========================= */
+   PREMIUM CSS - PART 2.1
+===================================== */
 
 :root{
-  --primary:#ff7a00;
-  --secondary:#0f172a;
-  --dark:#111827;
-  --light:#ffffff;
-  --gray:#6b7280;
-  --bg:#f8fafc;
-  --radius:18px;
-  --shadow:0 20px 40px rgba(0,0,0,.12);
-  --transition:.35s ease;
+    --primary:#ff7a00;
+    --secondary:#0f172a;
+    --white:#ffffff;
+    --light:#f8fafc;
+    --text:#374151;
+    --radius:18px;
+    --shadow:0 15px 35px rgba(0,0,0,.12);
+    --transition:.35s ease;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--dark);
-  line-height:1.7;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-ul{
-  list-style:none;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
 }
 
 .container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-/* HEADER */
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ==========================
+   HEADER
+========================== */
 
 header{
-  position:fixed;
-  width:100%;
-  top:0;
-  left:0;
-  background:rgba(255,255,255,.9);
-  backdrop-filter:blur(15px);
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-  z-index:1000;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,.90);
+    backdrop-filter:blur(15px);
+    z-index:999;
+    box-shadow:0 2px 20px rgba(0,0,0,.08);
 }
 
 .navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:80px;
 }
 
 .logo{
-  font-size:28px;
-  font-weight:700;
-  color:var(--primary);
+    font-size:30px;
+    font-weight:800;
+    color:var(--primary);
+    letter-spacing:1px;
 }
 
 .menu{
-  display:flex;
-  gap:30px;
+    display:flex;
+    list-style:none;
+    gap:35px;
 }
 
 .menu a{
-  font-weight:600;
-  transition:var(--transition);
+    color:#111;
+    font-weight:600;
+    transition:var(--transition);
 }
 
 .menu a:hover{
-  color:var(--primary);
+    color:var(--primary);
 }
 
-/* HERO */
+/* ==========================
+   HERO SECTION
+========================== */
 
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  background:
-  linear-gradient(135deg,#ff7a00,#ffb347);
-  color:#fff;
-  padding-top:90px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#ff7a00,#ffb347);
+    color:#fff;
+    padding-top:90px;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.1;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#fff8dc;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:600px;
+    margin-bottom:35px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 32px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.35s;
+}
+
+.btn-primary{
+    background:#fff;
+    color:var(--primary);
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+}
+
+.btn-outline{
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.btn-outline:hover{
+    background:#fff;
+    color:var(--primary);
+}
+
+/* ==========================
+   SECTION TITLE
+========================== */
+
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:44px;
+    color:#111827;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#6b7280;
+    max-width:650px;
+    margin:auto;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:991px){
+
+.hero h1{
+font-size:48px;
+}
+
+.navbar{
+flex-direction:column;
+height:auto;
+padding:15px 0;
+}
+
+.menu{
+margin-top:15px;
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+text-align:center;
+}
+
+.hero-content{
+margin:auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+}
+
+@media(max-width:480px){
+
+.btn{
+width:100%;
+text-align:center;
+}
+
+.logo{
+font-size:24px;
+}
+
+}  padding-top:90px;
 }
 
 .hero-content{
